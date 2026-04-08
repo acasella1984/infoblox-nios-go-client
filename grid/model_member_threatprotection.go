@@ -834,11 +834,13 @@ func (o MemberThreatprotection) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Ipv6address) {
 		toSerialize["ipv6address"] = o.Ipv6address
 	}
-	if !IsNil(o.NatRules) {
+	if !IsNil(o.NatRules) && len(o.NatRules) > 0 {
 		toSerialize["nat_rules"] = o.NatRules
 	}
 	if !IsNil(o.OutboundSettings) {
-		toSerialize["outbound_settings"] = o.OutboundSettings
+		if outbound_settingsMap, err := o.OutboundSettings.ToMap(); err == nil && len(outbound_settingsMap) > 0 {
+			toSerialize["outbound_settings"] = o.OutboundSettings
+		}
 	}
 	if !IsNil(o.Profile) {
 		toSerialize["profile"] = o.Profile

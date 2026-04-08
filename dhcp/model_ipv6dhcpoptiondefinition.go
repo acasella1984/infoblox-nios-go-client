@@ -230,7 +230,7 @@ func (o Ipv6dhcpoptiondefinition) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Space) {
 		toSerialize["space"] = o.Space
 	}
-	if !IsNil(o.Type) {
+	if !IsNil(o.Type) && *o.Type != "" {
 		toSerialize["type"] = o.Type
 	}
 	return toSerialize, nil
