@@ -292,13 +292,13 @@ func (o RecordHostSnmp3Credential) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.User) {
 		toSerialize["user"] = o.User
 	}
-	if !IsNil(o.AuthenticationProtocol) {
+	if !IsNil(o.AuthenticationProtocol) && *o.AuthenticationProtocol != "" {
 		toSerialize["authentication_protocol"] = o.AuthenticationProtocol
 	}
 	if !IsNil(o.AuthenticationPassword) {
 		toSerialize["authentication_password"] = o.AuthenticationPassword
 	}
-	if !IsNil(o.PrivacyProtocol) {
+	if !IsNil(o.PrivacyProtocol) && *o.PrivacyProtocol != "" {
 		toSerialize["privacy_protocol"] = o.PrivacyProtocol
 	}
 	if !IsNil(o.PrivacyPassword) {

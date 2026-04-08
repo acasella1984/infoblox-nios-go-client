@@ -1046,7 +1046,7 @@ func (o ParentalcontrolSubscriber) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AltSubscriberIdSubexpression) {
 		toSerialize["alt_subscriber_id_subexpression"] = o.AltSubscriberIdSubexpression
 	}
-	if !IsNil(o.Ancillaries) {
+	if !IsNil(o.Ancillaries) && len(o.Ancillaries) > 0 {
 		toSerialize["ancillaries"] = o.Ancillaries
 	}
 	if !IsNil(o.CatAcctname) {
@@ -1070,7 +1070,7 @@ func (o ParentalcontrolSubscriber) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.InterimAccountingInterval) {
 		toSerialize["interim_accounting_interval"] = o.InterimAccountingInterval
 	}
-	if !IsNil(o.IpAnchors) {
+	if !IsNil(o.IpAnchors) && len(o.IpAnchors) > 0 {
 		toSerialize["ip_anchors"] = o.IpAnchors
 	}
 	if !IsNil(o.IpSpaceDiscRegexp) {

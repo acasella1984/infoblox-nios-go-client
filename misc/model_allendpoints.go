@@ -301,7 +301,7 @@ func (o Allendpoints) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SubscribingMember) {
 		toSerialize["subscribing_member"] = o.SubscribingMember
 	}
-	if !IsNil(o.Type) {
+	if !IsNil(o.Type) && *o.Type != "" {
 		toSerialize["type"] = o.Type
 	}
 	if !IsNil(o.Version) {

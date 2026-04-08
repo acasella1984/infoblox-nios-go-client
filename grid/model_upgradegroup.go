@@ -431,13 +431,13 @@ func (o Upgradegroup) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DistributionDependentGroup) {
 		toSerialize["distribution_dependent_group"] = o.DistributionDependentGroup
 	}
-	if !IsNil(o.DistributionPolicy) {
+	if !IsNil(o.DistributionPolicy) && *o.DistributionPolicy != "" {
 		toSerialize["distribution_policy"] = o.DistributionPolicy
 	}
 	if !IsNil(o.DistributionTime) {
 		toSerialize["distribution_time"] = o.DistributionTime
 	}
-	if !IsNil(o.Members) {
+	if !IsNil(o.Members) && len(o.Members) > 0 {
 		toSerialize["members"] = o.Members
 	}
 	if !IsNil(o.Name) {
@@ -449,7 +449,7 @@ func (o Upgradegroup) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.UpgradeDependentGroup) {
 		toSerialize["upgrade_dependent_group"] = o.UpgradeDependentGroup
 	}
-	if !IsNil(o.UpgradePolicy) {
+	if !IsNil(o.UpgradePolicy) && *o.UpgradePolicy != "" {
 		toSerialize["upgrade_policy"] = o.UpgradePolicy
 	}
 	if !IsNil(o.UpgradeTime) {

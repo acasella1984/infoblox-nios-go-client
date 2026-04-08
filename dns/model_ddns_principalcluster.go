@@ -230,7 +230,7 @@ func (o DdnsPrincipalcluster) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Principals) {
+	if !IsNil(o.Principals) && len(o.Principals) > 0 {
 		toSerialize["principals"] = o.Principals
 	}
 	return toSerialize, nil
